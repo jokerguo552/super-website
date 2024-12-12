@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>宠物网</title>
+    <link href="css/css.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="logo">
+	<a href="#"><img src="images/logo.jpg" /></a>
+</div>
+<div class="nav">
+	<ul>
+        <li><a href="index.html"><img src="images/nav1.jpg"/>首页</a></li>
+        <li><a href="zhidao.html"><img src="images/nav2.jpg"/>养狗知道</a></li>
+        <li><a href="jieshao.html"><img src="images/nav3.jpg"/>狗狗介绍</a></li>
+        <li><a href="tuji.html"><img src="images/nav4.jpg"/>宠物图集</a></li>
+        <li><a href="lingyang.html"><img src="images/nav5.jpg"/>领养宠物</a></li>
+        <li><a href="liuyan.html"><img src="images/nav6.jpg"/>在线留言</a></li>
+    </ul>
+</div>
+<div class="topsite">
+	<div class="sear">  
+        <input type="text" class="text" id="search-input" placeholder="请输入搜索内容" />  
+        <input type="button" class="btn" value="搜索" id="search-btn" />  
+    </div>  
+    
+    <script>  
+    document.getElementById('search-btn').addEventListener('click', function() {  
+        const searchInput = document.getElementById('search-input').value.trim(); // 获取用户输入并去除空格  
+    
+        if (searchInput) {  
+            // 构建百度搜索的URL  
+            const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(searchInput)}`;  
+            
+            // 跳转到百度搜索结果页面  
+            window.location.href = baiduSearchUrl;  
+        } else {  
+            alert('请输入搜索关键字！'); // 如果输入为空，提示用户  
+        }  
+    });  
+    </script>
+    <div class="link">  
+        <span>热门搜索：</span>  
+        <a href="#" class="hot-search" data-query="泰迪">泰迪</a>  
+        <a href="#" class="hot-search" data-query="金毛">金毛</a>  
+        <a href="#" class="hot-search" data-query="博美">博美</a>  
+    </div>  
+    
+    <script>  
+        // 获取所有热门搜索链接  
+        const hotSearchLinks = document.querySelectorAll('.hot-search');  
+    
+        // 为每个链接添加点击事件  
+        hotSearchLinks.forEach(link => {  
+            link.addEventListener('click', function(e) {  
+                e.preventDefault(); // 阻止默认行为，防止链接跳转  
+    
+                const query = this.getAttribute('data-query'); // 获取data-query属性的值，作为搜索关键字  
+                const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(query)}`; // 构建百度搜索的URL  
+                
+                // 跳转到百度搜索结果页面  
+                window.location.href = baiduSearchUrl;   
+            });  
+        });  
+    </script>
+</div>
+<div class="jieshao">
+	<h2>狗狗介绍</h2>
+    <p><b>拉布拉多犬</b></p>
+    <p>忠实、沉着、聪明、和小孩一起让人放心，永远自足快乐，对侵入者戒心强，适合郊区生活。原先是当搬运工的，现在是红得发紫啊。拉布拉多猎犬的嗅觉优异，二次世界大战时被用来寻找地雷，现在则用作警犬，嗅闻找出非法药物。</p>
+    <img src="images/jieshao1.jpg">
+    <p><b>萨摩耶犬</b></p>
+    <p>《北方的那努克》里面就有这种可爱的狗狗。不仅很耐寒还很耐热，是一种深情的伴侣犬，有它的陪伴你会感觉到很温馨.</p>
+    <img src="images/jieshao2.jpg">
+    <p><b>松狮</b></p>
+    <p>别以为那融融的熊人毛会是很好抱的，它们通常都会令你失望因为它们不太喜欢给人逗着玩的</p>
+    <img src="images/jieshao3.jpg">
+    <p><b>哈士奇</b></p>
+    <p>哈士奇犬的典型性格为友好，温柔，警觉并喜欢交往。它不会呈现出护卫犬强烈的领地占有欲，不会对陌生人产生过多的怀疑，也不会攻击其他犬类。</p>
+    <img src="images/jieshao4.jpg">
+    <p><b>博美犬</b></p>
+    <p>博美犬有华丽的被毛，不仅需要定期修剪也要每天梳理，并不适合忙碌的人。但作为小型犬，博美还是很好的家庭伴侣。</p>
+    <img src="images/jieshao5.jpg">                
+</div>
+<div class="footer">
+	<p>宠物网</p>
+</div>
+</body>
+</html>

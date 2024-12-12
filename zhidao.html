@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>宠物网</title>
+    <link href="css/css.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="logo">
+	<a href="#"><img src="images/logo.jpg" /></a>
+</div>
+<div class="nav">
+	<ul>
+        <li><a href="index.html"><img src="images/nav1.jpg"/>首页</a></li>
+        <li><a href="zhidao.html"><img src="images/nav2.jpg"/>养狗知道</a></li>
+        <li><a href="jieshao.html"><img src="images/nav3.jpg"/>狗狗介绍</a></li>
+        <li><a href="tuji.html"><img src="images/nav4.jpg"/>宠物图集</a></li>
+        <li><a href="lingyang.html"><img src="images/nav5.jpg"/>领养宠物</a></li>
+        <li><a href="liuyan.html"><img src="images/nav6.jpg"/>在线留言</a></li>
+    </ul>
+</div>
+<div class="topsite">
+	<div class="sear">  
+        <input type="text" class="text" id="search-input" placeholder="请输入搜索内容" />  
+        <input type="button" class="btn" value="搜索" id="search-btn" />  
+    </div>  
+    
+    <script>  
+    document.getElementById('search-btn').addEventListener('click', function() {  
+        const searchInput = document.getElementById('search-input').value.trim(); // 获取用户输入并去除空格  
+    
+        if (searchInput) {  
+            // 构建百度搜索的URL  
+            const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(searchInput)}`;  
+            
+            // 跳转到百度搜索结果页面  
+            window.location.href = baiduSearchUrl;  
+        } else {  
+            alert('请输入搜索关键字！'); // 如果输入为空，提示用户  
+        }  
+    });  
+    </script>
+    <div class="link">  
+        <span>热门搜索：</span>  
+        <a href="#" class="hot-search" data-query="泰迪">泰迪</a>  
+        <a href="#" class="hot-search" data-query="金毛">金毛</a>  
+        <a href="#" class="hot-search" data-query="博美">博美</a>  
+    </div>  
+    
+    <script>  
+        // 获取所有热门搜索链接  
+        const hotSearchLinks = document.querySelectorAll('.hot-search');  
+    
+        // 为每个链接添加点击事件  
+        hotSearchLinks.forEach(link => {  
+            link.addEventListener('click', function(e) {  
+                e.preventDefault(); // 阻止默认行为，防止链接跳转  
+    
+                const query = this.getAttribute('data-query'); // 获取data-query属性的值，作为搜索关键字  
+                const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(query)}`; // 构建百度搜索的URL  
+                
+                // 跳转到百度搜索结果页面  
+                window.location.href = baiduSearchUrl;   
+            });  
+        });  
+    </script>
+</div>
+<div class="zhidao">
+	<h2>养狗知道</h2>
+    <p>养狗之前你必须要知道的6件事，看完你再决定要不要养狗！</p>
+    <p>经常听周围朋友说，“啊，一个人好辛苦啊，不如养条狗吧。”，“哇，狗狗好可爱，好想养一只哦！”结果往往是第一天朋友圈还在晒着狗狗的萌照，一星期后就变成“求领走”了。</p>
+    <p>因为种种原因，导致心血来潮买了狗的人没能把狗继续养下去。由此可见，养狗之前必须做足功课，不然到最后无论是狗还是人，都会很不开心。</p>
+    <p>好，恐吓完毕，接下来小编分类概述一下养狗须知。新手奶爸如果不想重蹈覆辙的话，那养狗之前就一定要知道这6件事。</p>
+    <img src="images/zhidao.jpg">
+    <p>首先，那就是狗的寿命平均在10-20岁之间，如果你的梦想是与它白头偕老，那恐怕很难实现。</p>
+    <p>第二件事就是狗狗的繁殖情况，狗狗在7-12个月之间即可达到性成熟，每年可繁殖1-3胎，每胎可生1-6只。掐指一算……嗯，想养母狗的恐怕要提前做好替狗狗节育的思想觉悟了。</p>
+    <p>第三件事就是母狗的孕期，幼犬在犬妈妈的肚子里的时间大概在58-65天之间，开眼时间大约在出生后10-16天。想当年，在刚放暑假的时候我家母狗怀上了仔仔，到了我开学的时候，幼仔都还没见过我！一整个暑假都白期待了好吗！</p>
+    <p>第四件事就是要明白笼子对于狗狗的意义，没养过狗的萌新们一听到“笼子”两个字就满脸写着拒绝，说绝对不愿意把自己的狗关在笼子里。事实上，狗只是不愿意一直待在笼子里，但这并不代表它不爱笼子。<p>
+    <p>第五件事就是对狗狗的吠叫有耐心，无论你有没有养狗的经验，我们平时都能看到一只狗见到另一只陌生的狗时会全身紧绷，发出低吼，仿佛随时都可能进入战斗模式。</p>
+    <p>最后一件事，就是正视我们养狗的心态。现在很多人养狗，都不是买狗，而是直接领养流浪狗。一些流浪狗受过冷落，可能会有一些心灵创伤，显得比较怂。这时候，你就要出杀招，让它克服心理障碍。这个杀招说难也难，说简单也简单，那就是——每天坚持遛它。就像人独自待久了会变得敏感孤僻一样，狗狗只有充分社交，多见见世面，以后见到其他狗才能抬头挺胸有气势。</p>
+</div>
+<div class="footer">
+	<p>宠物网</p>
+</div>
+</body>
+</html>

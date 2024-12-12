@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>宠物网</title>
+    <link href="css/css.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="logo">
+	<a href="#"><img src="images/logo.jpg" /></a>
+</div>
+<div class="nav">
+	<ul>
+        <li><a href="index.html"><img src="images/nav1.jpg"/>首页</a></li>
+        <li><a href="zhidao.html"><img src="images/nav2.jpg"/>养狗知道</a></li>
+        <li><a href="jieshao.html"><img src="images/nav3.jpg"/>狗狗介绍</a></li>
+        <li><a href="tuji.html"><img src="images/nav4.jpg"/>宠物图集</a></li>
+        <li><a href="lingyang.html"><img src="images/nav5.jpg"/>领养宠物</a></li>
+        <li><a href="liuyan.html"><img src="images/nav6.jpg"/>在线留言</a></li>
+    </ul>
+</div>
+<div class="topsite">
+	<div class="sear">  
+        <input type="text" class="text" id="search-input" placeholder="请输入搜索内容" />  
+        <input type="button" class="btn" value="搜索" id="search-btn" />  
+    </div>  
+    
+    <script>  
+    document.getElementById('search-btn').addEventListener('click', function() {  
+        const searchInput = document.getElementById('search-input').value.trim(); // 获取用户输入并去除空格  
+    
+        if (searchInput) {  
+            // 构建百度搜索的URL  
+            const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(searchInput)}`;  
+            
+            // 跳转到百度搜索结果页面  
+            window.location.href = baiduSearchUrl;  
+        } else {  
+            alert('请输入搜索关键字！'); // 如果输入为空，提示用户  
+        }  
+    });  
+    </script>
+    <div class="link">  
+        <span>热门搜索：</span>  
+        <a href="#" class="hot-search" data-query="泰迪">泰迪</a>  
+        <a href="#" class="hot-search" data-query="金毛">金毛</a>  
+        <a href="#" class="hot-search" data-query="博美">博美</a>  
+    </div>  
+    
+    <script>  
+        // 获取所有热门搜索链接  
+        const hotSearchLinks = document.querySelectorAll('.hot-search');  
+    
+        // 为每个链接添加点击事件  
+        hotSearchLinks.forEach(link => {  
+            link.addEventListener('click', function(e) {  
+                e.preventDefault(); // 阻止默认行为，防止链接跳转  
+    
+                const query = this.getAttribute('data-query'); // 获取data-query属性的值，作为搜索关键字  
+                const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(query)}`; // 构建百度搜索的URL  
+                
+                // 跳转到百度搜索结果页面  
+                window.location.href = baiduSearchUrl;   
+            });  
+        });  
+    </script>
+</div>
+<div class="tuji">
+	<h2>宠物图集</h2>
+    <ul>
+    	<li><img src="images/tuji1.jpg"><p>哈士奇</p></li>
+        <li><img src="images/tuji2.jpg"><p>藏獒</p></li>
+        <li><img src="images/tuji3.jpg"><p>贵宾犬</p></li>
+        <li><img src="images/tuji4.jpg"><p>松狮</p></li>
+        <li><img src="images/tuji5.jpg"><p>边境牧羊犬</p></li>
+    	<li><img src="images/tuji6.jpg"><p>吉娃娃</p></li>
+        <li><img src="images/tuji7.jpg"><p>德国牧羊犬</p></li>
+        <li><img src="images/tuji8.jpg"><p>秋田犬</p></li>
+        <li><img src="images/tuji9.jpg"><p>博美犬</p></li>       
+    </ul>
+</div>
+<div class="footer">
+	<p>宠物网</p>
+</div>
+</body>
+</html>

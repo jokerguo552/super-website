@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>宠物网</title>
+    <link href="css/css.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="logo">
+	<a href="#"><img src="images/logo.jpg" /></a>
+</div>
+<div class="nav">
+	<ul>
+        <li><a href="index.html"><img src="images/nav1.jpg"/>首页</a></li>
+        <li><a href="zhidao.html"><img src="images/nav2.jpg"/>养狗知道</a></li>
+        <li><a href="jieshao.html"><img src="images/nav3.jpg"/>狗狗介绍</a></li>
+        <li><a href="tuji.html"><img src="images/nav4.jpg"/>宠物图集</a></li>
+        <li><a href="lingyang.html"><img src="images/nav5.jpg"/>领养宠物</a></li>
+        <li><a href="liuyan.html"><img src="images/nav6.jpg"/>在线留言</a></li>
+    </ul>
+</div>
+<div class="topsite">
+	<div class="sear">  
+        <input type="text" class="text" id="search-input" placeholder="请输入搜索内容" />  
+        <input type="button" class="btn" value="搜索" id="search-btn" />  
+    </div>  
+    
+    <script>  
+    document.getElementById('search-btn').addEventListener('click', function() {  
+        const searchInput = document.getElementById('search-input').value.trim(); // 获取用户输入并去除空格  
+    
+        if (searchInput) {  
+            // 构建百度搜索的URL  
+            const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(searchInput)}`;  
+            
+            // 跳转到百度搜索结果页面  
+            window.location.href = baiduSearchUrl;  
+        } else {  
+            alert('请输入搜索关键字！'); // 如果输入为空，提示用户  
+        }  
+    });  
+    </script>
+    <div class="link">  
+        <span>热门搜索：</span>  
+        <a href="#" class="hot-search" data-query="泰迪">泰迪</a>  
+        <a href="#" class="hot-search" data-query="金毛">金毛</a>  
+        <a href="#" class="hot-search" data-query="博美">博美</a>  
+    </div>  
+    
+    <script>  
+        // 获取所有热门搜索链接  
+        const hotSearchLinks = document.querySelectorAll('.hot-search');  
+    
+        // 为每个链接添加点击事件  
+        hotSearchLinks.forEach(link => {  
+            link.addEventListener('click', function(e) {  
+                e.preventDefault(); // 阻止默认行为，防止链接跳转  
+    
+                const query = this.getAttribute('data-query'); // 获取data-query属性的值，作为搜索关键字  
+                const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(query)}`; // 构建百度搜索的URL  
+                
+                // 跳转到百度搜索结果页面  
+                window.location.href = baiduSearchUrl;   
+            });  
+        });  
+    </script>
+</div>
+<div class="login">  
+    <h2>登录</h2>  
+    <p><span>用户名：</span><input type="text" id="username" required placeholder="请输入用户名"></p>  
+    <p><span>密码：</span><input type="password" id="password" required placeholder="请输入密码"></p>  
+    <div class="btn">  
+        <input type="button" id="login-btn" value="登录">  
+    </div>  
+    <div id="login-feedback" style="color: red;"></div>  
+</div>  
+
+<script>  
+document.getElementById('login-btn').addEventListener('click', function() {  
+    const username = document.getElementById('username').value.trim();  
+    const password = document.getElementById('password').value.trim();  
+    const feedback = document.getElementById('login-feedback');  
+
+    // 重置反馈信息  
+    feedback.textContent = '';  
+
+    // 从本地存储中获取已注册的用户信息  
+    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];  
+
+    // 查找用户  
+    const user = existingUsers.find(user => user.username === username && user.password === password);  
+
+    if (user) {  
+        // 登录成功  
+        feedback.style.color = 'green';  
+        feedback.textContent = '登录成功！';  
+        
+        // 这里可以添加登录成功后的逻辑，例如跳转到主页  
+        // window.location.href = 'home.html'; // 示例的重定向  
+    } else {  
+        // 登录失败  
+        feedback.textContent = '用户名或密码错误，请重试！';  
+    }  
+});  
+</script>
+<div class="footer">
+	<p>宠物网</p>
+</div>
+</body>
+</html>

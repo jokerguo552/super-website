@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>宠物网</title>
+    <link href="css/css.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="logo">
+	<a href="#"><img src="images/logo.jpg" /></a>
+</div>
+<div class="nav">
+	<ul>
+        <li><a href="index.html"><img src="images/nav1.jpg"/>首页</a></li>
+        <li><a href="zhidao.html"><img src="images/nav2.jpg"/>养狗知道</a></li>
+        <li><a href="jieshao.html"><img src="images/nav3.jpg"/>狗狗介绍</a></li>
+        <li><a href="tuji.html"><img src="images/nav4.jpg"/>宠物图集</a></li>
+        <li><a href="lingyang.html"><img src="images/nav5.jpg"/>领养宠物</a></li>
+        <li><a href="liuyan.html"><img src="images/nav6.jpg"/>在线留言</a></li>
+    </ul>
+</div>
+<div class="topsite">
+	<div class="sear">  
+        <input type="text" class="text" id="search-input" placeholder="请输入搜索内容" />  
+        <input type="button" class="btn" value="搜索" id="search-btn" />  
+    </div>  
+    
+    <script>  
+    document.getElementById('search-btn').addEventListener('click', function() {  
+        const searchInput = document.getElementById('search-input').value.trim(); // 获取用户输入并去除空格  
+    
+        if (searchInput) {  
+            // 构建百度搜索的URL  
+            const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(searchInput)}`;  
+            
+            // 跳转到百度搜索结果页面  
+            window.location.href = baiduSearchUrl;  
+        } else {  
+            alert('请输入搜索关键字！'); // 如果输入为空，提示用户  
+        }  
+    });  
+    </script>
+    <div class="link">  
+        <span>热门搜索：</span>  
+        <a href="#" class="hot-search" data-query="泰迪">泰迪</a>  
+        <a href="#" class="hot-search" data-query="金毛">金毛</a>  
+        <a href="#" class="hot-search" data-query="博美">博美</a>  
+    </div>  
+    
+    <script>  
+        // 获取所有热门搜索链接  
+        const hotSearchLinks = document.querySelectorAll('.hot-search');  
+    
+        // 为每个链接添加点击事件  
+        hotSearchLinks.forEach(link => {  
+            link.addEventListener('click', function(e) {  
+                e.preventDefault(); // 阻止默认行为，防止链接跳转  
+    
+                const query = this.getAttribute('data-query'); // 获取data-query属性的值，作为搜索关键字  
+                const baiduSearchUrl = `https://www.baidu.com/s?wd=${encodeURIComponent(query)}`; // 构建百度搜索的URL  
+                
+                // 跳转到百度搜索结果页面  
+                window.location.href = baiduSearchUrl;   
+            });  
+        });  
+    </script>
+</div>
+<div class="main">
+    <div class="left">
+        <div class="gonggao">
+            <h3>最新公告</h3>
+            <p>3月14号上午，苏州一家注塑加工厂发生火灾。消防员几经尝试，救出狗狗，附近工人称：消防员救狗狗，非常有爱心。</p>
+        </div>
+    </div>
+    <div class="min">
+        <div class="pic_show">
+        	<img src="images/show1.jpg">
+            <img src="images/show2.jpg">
+            <img src="images/show3.jpg">
+            <img src="images/show4.jpg">
+        </div>
+    </div>
+    <div class="right">
+        <div class="login">
+        	<a href="zhuce.html">免费注册</a>
+            <a href="denglu.html">登录</a>
+		</div>
+        <div class="right_nav">
+        	<h3>宠物狗品种</h3>
+        	<ul>
+                <li><a href="#">哈士奇</a></li>
+                <li><a href="#">藏獒</a></li>
+                <li><a href="#">贵宾犬</a></li>
+                <li><a href="#">松狮</a></li>
+                <li><a href="#">边境牧羊犬</a></li>
+                <li><a href="#">吉娃娃</a></li>
+                <li><a href="#">德国牧羊犬</a></li>
+                <li><a href="#">秋田犬</a></li>
+                <li><a href="#">蝴蝶犬</a></li>
+                <li><a href="#">博美犬</a></li>
+                <li><a href="#">杜宾犬</a></li>
+                <li><a href="#">柴犬</a></li>    
+                <li><a href="#">法国斗牛犬</a></li>
+                <li><a href="#">萨摩耶犬</a></li>                             
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="footer">
+	<p>宠物网</p>
+</div>
+</body>
+</html>
