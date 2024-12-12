@@ -2,20 +2,20 @@
 <head>
     <meta charset="utf-8" />
     <title>宠物网</title>
-    <link href="css/css.css" rel="stylesheet"/>
+    <link href="css.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="logo">
-	<a href="#"><img src="images/logo.jpg" /></a>
+	<a href="#"><img src="logo.jpg" /></a>
 </div>
 <div class="nav">
 	<ul>
-        <li><a href="index.html"><img src="images/nav1.jpg"/>首页</a></li>
-        <li><a href="zhidao.html"><img src="images/nav2.jpg"/>养狗知道</a></li>
-        <li><a href="jieshao.html"><img src="images/nav3.jpg"/>狗狗介绍</a></li>
-        <li><a href="tuji.html"><img src="images/nav4.jpg"/>宠物图集</a></li>
-        <li><a href="lingyang.html"><img src="images/nav5.jpg"/>领养宠物</a></li>
-        <li><a href="liuyan.html"><img src="images/nav6.jpg"/>在线留言</a></li>
+        <li><a href="index.html"><img src="nav1.jpg"/>首页</a></li>
+        <li><a href="zhidao.html"><img src="nav2.jpg"/>养狗知道</a></li>
+        <li><a href="jieshao.html"><img src="nav3.jpg"/>狗狗介绍</a></li>
+        <li><a href="tuji.html"><img src="nav4.jpg"/>宠物图集</a></li>
+        <li><a href="lingyang.html"><img src="nav5.jpg"/>领养宠物</a></li>
+        <li><a href="liuyan.html"><img src="nav6.jpg"/>在线留言</a></li>
     </ul>
 </div>
 <div class="topsite">
@@ -64,16 +64,28 @@
         });  
     </script>
 </div>
-<div class="liuyan">
-	<h2>在线留言</h2>
-    <p><span>称呼：</span><input type="text"></p>
-    <p><span>手机号：</span><input type="text"></p>
-    <p><span>留言内容：</span><textarea></textarea></p>
-    <div class="btn">
-    	<input type="reset" value="重置">
-        <input type="submit" value="提交">
-    </div>
-</div>
+<div class="liuyan">  
+    <h2>在线留言</h2>  
+    <form id="messageForm">  
+        <p><span>称呼：</span><input type="text" required></p>  
+        <p><span>手机号：</span><input type="text" required></p>  
+        <p><span>留言内容：</span><textarea required></textarea></p>  
+        <div class="btn">  
+            <input type="reset" value="重置">  
+            <input type="submit" value="提交">  
+        </div>  
+    </form>  
+    <div id="thankYouMessage" style="display: none; margin-top: 20px; color: green;">  
+        谢谢你的帮助！  
+    </div>  
+</div>  
+<script>  
+    document.getElementById('messageForm').addEventListener('submit', function(event) {  
+        event.preventDefault(); // 阻止表单的默认提交行为  
+        document.getElementById('thankYouMessage').style.display = 'block'; // 显示感谢消息  
+        this.reset(); // 重置表单  
+    });  
+</script>  
 <div class="footer">
 	<p>宠物网</p>
 </div>
